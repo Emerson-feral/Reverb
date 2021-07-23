@@ -14,6 +14,8 @@ function guitarRouter() {
     .get(guitarController.getById)
     .put(guitarController.updateById)
     .delete(guitarController.deleteById);
+
+  return routes;
 }
 
 module.exports = guitarRouter();

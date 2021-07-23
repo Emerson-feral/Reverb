@@ -1,13 +1,13 @@
 const express = require('express');
 const debug = require('debug')('server');
+const morgan = require('morgan');
 require('dotenv').config();
 
 const mongoose = require('mongoose');
+const guitarRoutes = require('./routes/guitarRoutes');
 
 const server = express();
 const port = process.env.PORT;
-
-server.use(express.json());
 
 mongoose.connect(
   process.env.DDBB_URL,
@@ -15,9 +15,11 @@ mongoose.connect(
     useUnifiedTopology: true,
     useNewUrlParser: true
   }
-).then(
-  () => debug('database connection stablished'),
-  (error) => debug('database connection error', error)
 );
+
+server.use(express.json());
+server.use(morgan('dev'));
+
+server.use('/api/guitar', guitarRoutes);
 
 server.listen(port, () => debug(`Server is running in localhost:${port}`));
