@@ -4,7 +4,7 @@ const guitarSchema = mongoose.Schema({
   image: String,
   brand: String,
   model: String,
-  strings: String,
+  strings: Number,
   price: Number
 });
 
