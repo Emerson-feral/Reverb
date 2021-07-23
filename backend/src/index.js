@@ -4,7 +4,7 @@ const debug = require('debug');
 const { connect } = 'mongoose';
 
 const server = express();
-const port = 2030;
+const port = process.env.PORT;
 
 server.use(express.json());
 
