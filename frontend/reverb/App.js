@@ -8,13 +8,23 @@
  * @flow strict-local
  */
 
+import 'react-native-gesture-handler';
 import React from 'react';
-import Hello from './src/components/index';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Header from './src/components/Header';
+import List from './src/components/List';
+
+const Stack = createStackNavigator();
 
 const App = () => (
-
-  <Hello />
-
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Header" component={Header} options={{ title: 'Welcome Home' }} />
+      <Stack.Screen name="List" component={List} options={{ title: 'Welcome List' }} />
+    </Stack.Navigator>
+  </NavigationContainer>
 );
 
 export default App;
