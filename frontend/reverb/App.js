@@ -5,26 +5,41 @@
  * https://github.com/facebook/react-native
  *
  * @format
- * @flow strict-local
  */
 
 import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Provider } from 'react-redux';
 
-import Header from './src/components/Header';
+/* import Navigation from './src/components/Navigation/index'; */
+import Home from './src/components/Home';
 import List from './src/components/List';
+import configureStore from './src/redux/store';
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-const App = () => (
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Header" component={Header} options={{ title: 'Welcome Home' }} />
-      <Stack.Screen name="List" component={List} options={{ title: 'Welcome List' }} />
-    </Stack.Navigator>
-  </NavigationContainer>
-);
+function App() {
+  return (
+    <>
+      <Provider store={configureStore()}>
+        <NavigationContainer>
+          <Tab.Navigator initialRouteName="Home">
+            <Tab.Screen
+              name="Home"
+              component={Home}
+            />
+            <Tab.Screen
+              name="List"
+              component={List}
+            />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </Provider>
+    </>
+
+  );
+}
 
 export default App;
