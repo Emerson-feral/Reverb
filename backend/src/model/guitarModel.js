@@ -8,4 +8,4 @@ const guitarSchema = mongoose.Schema({
   price: Number
 });
 
-module.exports = mongoose.model('Guitars', guitarSchema);
+module.exports = mongoose.model('Guitar', guitarSchema);
