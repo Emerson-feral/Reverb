@@ -1,8 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Home from '../Home';
 import List from '../List';
+import Home from '../Home/index';
+import BrandsList from '../BrandsList';
 
 const Stack = createStackNavigator();
 
@@ -14,8 +15,9 @@ export default function Navigation() {
         headerShown: false
       }}
     >
-      <Stack.Screen name="Home" component={Home} options={{ title: 'Welcome Home' }} />
-      <Stack.Screen name="List" component={List} options={{ title: 'Welcome List' }} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="List" component={List} />
+      <Stack.Screen name="BrandsList" component={BrandsList} />
     </Stack.Navigator>
 
   );
