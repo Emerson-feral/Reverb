@@ -17,7 +17,9 @@ const styles = StyleSheet.create({
   appLogoText: {
     fontSize: 40,
     color: 'white',
-    marginTop: 30
+    marginTop: 30,
+    fontStyle: 'italic',
+    fontFamily: 'sans-serif-light'
   },
 
   mainContainer: {
