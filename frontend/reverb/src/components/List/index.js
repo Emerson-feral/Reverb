@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  View, Text, ScrollView, Image, StyleSheet, ImageBackground
+  View, Text, ScrollView, Image, StyleSheet, ImageBackground, TouchableOpacity
 } from 'react-native';
-import getGuitars from '../../redux/action/actionCreators';
+import { getGuitars } from '../../redux/action/actionCreators';
 
 function List({ route }) {
   const dispatch = useDispatch();
   const guitars = useSelector((store) => store.guitars);
   const { selectedBrand, logo } = route.params;
   const brandLogo = { uri: logo };
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (!guitars.length)dispatch(getGuitars());
@@ -21,59 +23,77 @@ function List({ route }) {
 
   const styles = StyleSheet.create({
     tinyLogo: {
-      width: 50,
-      height: 50,
-      margin: 30
-    },
-    appLogo: {
-      position: 'absolute',
-      height: '60%',
-      width: '100%'
+      width: 80,
+      height: 200,
+      margin: 5,
+      marginLeft: 30,
+      resizeMode: 'contain'
     },
 
-    listContainer: {
-      marginTop: '60%',
-      backgroundColor: 'blue',
-      borderTopLeftRadius: 60,
-      borderTopRightRadius: 60,
-      height: '100%'
+    appLogo: {
+      position: 'absolute',
+      height: '50%',
+      width: '100%',
+      backgroundColor: 'white'
     },
 
     guitarList: {
-      marginTop: 20
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      marginTop: 5
     },
-    // eslint-disable-next-line react-native/no-color-literals
-    background: {
+
+    guitarListText: {
+      fontSize: 14,
+      fontWeight: 'bold'
+    },
+
+    mainContainer: {
       height: '100%'
+    },
+
+    listContainer: {
+      height: '70%',
+      marginTop: '57.5%',
+      backgroundColor: 'white',
+      paddingLeft: 2,
+      paddingRight: 2,
+      borderWidth: 2,
+      borderColor: 'gray',
+      borderTopRightRadius: 60,
+      borderTopLeftRadius: 60,
+      paddingTop: 2,
+      overflow: 'hidden'
     }
   });
 
   return (
-    <View style={styles.background}>
+    <View style={styles.mainContainer}>
       <ImageBackground
         style={styles.appLogo}
         source={brandLogo}
-        resizeMode="stretch"
+        resizeMode="contain"
       />
-      <View>
-        <ScrollView style={styles.listContainer}>
+      <View style={styles.listContainer}>
+        <ScrollView>
           {
           filteredGuitars?.map((item) => (
-            <View key={item._id} style={styles.guitarList}>
-              <Image
-                style={styles.tinyLogo}
-                source={{
-                  uri: item.image
-                }}
-              />
-              <Text>{item.model}</Text>
-            </View>
+            <TouchableOpacity key={item._id} onPress={() => navigation.navigate('GuitarDetail', { selectedGuitar: item })}>
+              <View key={item._id} style={styles.guitarList}>
+                <Image
+                  style={styles.tinyLogo}
+                  source={{
+                    uri: item.image
+                  }}
+                />
+                <Text style={styles.guitarListText}>{item.model}</Text>
+              </View>
+            </TouchableOpacity>
           ))
         }
         </ScrollView>
-
       </View>
-
     </View>
   );
 }
