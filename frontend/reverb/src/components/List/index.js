@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   View, Text, ScrollView, Image, StyleSheet, ImageBackground, TouchableOpacity
 } from 'react-native';
-import { getGuitars } from '../../redux/action/actionCreators';
+import getGuitars from '../../redux/action/actionCreators';
 
 function List({ route }) {
   const dispatch = useDispatch();
