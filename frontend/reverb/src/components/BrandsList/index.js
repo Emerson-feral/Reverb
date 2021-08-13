@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import {
   View, ScrollView, Image, StyleSheet, TouchableOpacity
 } from 'react-native';
+import colors from '../styles/colors';
 
 function BrandsList() {
   const navigation = useNavigation();
@@ -39,7 +40,7 @@ function BrandsList() {
 
     // eslint-disable-next-line react-native/no-color-literals
     background: {
-      backgroundColor: 'white',
+      backgroundColor: colors.white,
       height: '100%',
       borderTopLeftRadius: 60,
       borderTopRightRadius: 60

@@ -4,6 +4,7 @@ import {
   View, Text, ImageBackground, StyleSheet
 } from 'react-native';
 import BrandsList from '../BrandsList';
+import colors from '../styles/colors';
 
 const styles = StyleSheet.create({
   appLogo: {
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
 
   appLogoText: {
     fontSize: 40,
-    color: 'white',
+    color: colors.white,
     marginTop: 30,
     fontStyle: 'italic',
     fontFamily: 'sans-serif-light'
