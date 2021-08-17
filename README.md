@@ -1,3 +1,5 @@
+![Reverb logo](https://images.pexels.com/photos/63695/pexels-photo-63695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
+
 # Reverb
 Guitar database with React native
 
@@ -9,7 +11,7 @@ Guitar database with React native
 - Run command `npm install` for install dependencies</br>
 - Open server folder and run the command `npm start`</br>
 - Open frontend folder and run the command `npx react-native run-start`</br>
-- Open another frontend folder and run the command `npx react-native run-(android or ios)
+- Open another frontend folder and run the command `npx react-native run-(android or ios)`
 
   <h3>FRONTEND</h3>
 - React-Native</br>
