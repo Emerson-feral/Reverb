@@ -1,4 +1,4 @@
-![Reverb logo](https://images.pexels.com/photos/63695/pexels-photo-63695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
+![Reverb logo](https://imgur.com/aGDfeSr)
 
 # Reverb
 Guitar database with React native
