@@ -2,7 +2,7 @@
 Guitar database with React native
 
 <h3>How tu run this app</h3>
-! The project needs to have Android Studio or XCode installed!</br>
+  The project needs to have Android Studio or XCode installed!</br>
 
 - Download the project</br>
 - Open project in your code editor</br>
