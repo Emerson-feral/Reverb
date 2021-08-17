@@ -17,7 +17,7 @@ Guitar database with React native
 - React-Native</br>
 - Typescript</br>
 - Redux</br>
-- Stack </br>
+- Stack navigation </br>
 
   <h3>BACKEND</h3>
 - Mongoose</br>
