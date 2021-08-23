@@ -3,7 +3,7 @@
 # Reverb
 Guitar database with React native
 
-https://www.linkedin.com/posts/emerson-fernandes-almeida_mobile-fullstack-reactnative-activity-6833390655755046912-dsWB
+Video demo: `https://www.linkedin.com/posts/emerson-fernandes-almeida_mobile-fullstack-reactnative-activity-6833390655755046912-dsWB`
 
 <h3>How tu run this app</h3>
   The project needs to have Android Studio or XCode installed!</br>
